@@ -1,4 +1,3 @@
-console.log(arr);
 const binarySearch = () => {
   let cari = document.getElementById("nomorpunggung").value;
   let start = 0;
@@ -67,6 +66,5 @@ const listData = () => {
           </div>`;
     let e = document.getElementById("data");
     e.innerHTML += card;
-    console.log(data.name);
   });
 };
