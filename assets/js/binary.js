@@ -1,49 +1,3 @@
-const binarySearch = () => {
-  let cari = document.getElementById("nomorpunggung").value;
-  let start = 0;
-  let end = arr.length - 1;
-  let mid = Math.floor((end + start) / 2);
-  while (arr[mid].strNumber != cari && start < end) {
-    if (cari < arr[mid].strNumber) {
-      end = mid - 1;
-      console.log("GESER KE KIRI");
-    } else if (cari > arr[mid].strNumber) {
-      start = mid + 1;
-      console.log("GESER KE KANAN");
-    }
-    mid = Math.floor((end + start) / 2);
-  }
-  return arr[mid].strNumber != cari
-    ? Swal.fire({
-        type: "error",
-        title: "Oops...",
-        text: `Nomor punggung ${cari} tidak di temukan`
-      })
-    : Swal.fire({
-        title: "<i>Data ditemukan</i>",
-        animation: false,
-        customClass: {
-          popup: "animated flash"
-        },
-        html: `<div class="col s12 m4">
-            <div class="card">
-            <div class="card-image">
-                <img
-                src="${arr[mid].thumbnail}"
-                />
-                <span class="card-title" style="font-weight: bold;">${arr[mid].name}</span>
-            </div>
-            <div class="card-content">
-                <p>
-                Nationality : ${arr[mid].nationality} <br>
-                Nomor Punggung : ${arr[mid].strNumber}
-                </p>
-            </div>
-            </div>
-        </div>`
-      });
-};
-
 const listData = () => {
   let button = document.getElementById("databutton");
   button.parentNode.removeChild(button);
@@ -67,4 +21,43 @@ const listData = () => {
     let e = document.getElementById("data");
     e.innerHTML += card;
   });
+};
+
+const linearSearch = () => {
+  let playerNumber = document.getElementById("nomorpunggung").value;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].strNumber == playerNumber) {
+      console.log("KETEMU");
+      return Swal.fire({
+        title: "<i>Data ditemukan</i>",
+        animation: false,
+        customClass: {
+          popup: "animated flash"
+        },
+        html: `<div class="col s12 m4">
+            <div class="card">
+            <div class="card-image">
+                <img
+                src="${arr[i].thumbnail}"
+                />
+                <span class="card-title" style="font-weight: bold;">${arr[i].name}</span>
+            </div>
+            <div class="card-content">
+                <p>
+                Nationality : ${arr[i].nationality} <br>
+                Nomor Punggung : ${arr[i].strNumber}
+                </p>
+            </div>
+            </div>
+        </div>`
+      });
+    } else {
+      console.log(`DATA TIDAK DI TEMUKAN MAJU KE ITERASI ${i}`);
+      Swal.fire({
+        type: "error",
+        title: "Oops...",
+        text: `Nomor punggung ${playerNumber} tidak di temukan`
+      });
+    }
+  }
 };
