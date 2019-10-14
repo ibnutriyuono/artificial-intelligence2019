@@ -27,7 +27,7 @@ const linearSearch = () => {
   let playerNumber = document.getElementById("nomorpunggung").value;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].strNumber == playerNumber) {
-      console.log("KETEMU");
+      console.log(`KETEMU INDEX KE ${i}`);
       return Swal.fire({
         title: "<i>Data ditemukan</i>",
         animation: false,
