@@ -48,7 +48,7 @@ const listData = () => {
   let button = document.getElementById("databutton");
   button.parentNode.removeChild(button);
   arr.forEach(data => {
-    let card = `<div class="col s12 m4">
+    let card = `<div class="col s12 m3">
             <div class="card">
               <div class="card-image">
                 <img
