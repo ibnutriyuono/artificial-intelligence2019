@@ -23,6 +23,8 @@ const listData = () => {
   });
 };
 
+console.log(arr);
+
 const linearSearch = () => {
   let playerNumber = document.getElementById("nomorpunggung").value;
   for (let i = 0; i < arr.length; i++) {

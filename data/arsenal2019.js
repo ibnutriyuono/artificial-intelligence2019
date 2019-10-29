@@ -28,18 +28,19 @@ const arr = [
       "https://www.thesportsdb.com/images/media/player/thumb/tx5vqq1544985296.jpg"
   },
   {
-    strNumber: "8",
-    name: "Daniel Ceballos",
-    nationality: "Spain",
-    thumbnail:
-      "https://www.thesportsdb.com/images/media/player/thumb/kkuxes1564607623.jpg"
-  },
-  {
     strNumber: "9",
     name: "Alexandre Lacazette",
     nationality: "France",
     thumbnail:
       "https://www.thesportsdb.com/images/media/player/thumb/f0i81c1510852903.jpg"
+  },
+
+  {
+    strNumber: "8",
+    name: "Daniel Ceballos",
+    nationality: "Spain",
+    thumbnail:
+      "https://www.thesportsdb.com/images/media/player/thumb/kkuxes1564607623.jpg"
   },
   {
     strNumber: "10",
