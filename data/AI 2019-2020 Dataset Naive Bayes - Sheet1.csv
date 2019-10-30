@@ -1,9 +1,4 @@
-NAMA UKM,"LAMA USAHA
-(dlm tahun)","JUMLAH
-PEKERJA","OMZET
-(dlm juta)","JUMLAH
-ASET","HASIL
-KEPUTUSAN"
+NAMA UKM,LAMA USAHA(dlm tahun),JUMLAH PEKERJA,OMZET (dlm juta),JUMLAH ASET,HASIL KEPUTUSAN
 Sanggar Azalea,2,14,3,2,TUNDA
 Kedurus Sejahtera,6,7,5,4,TIDAK
 Rapi Ayu Handycraft,4,16,1,10,TUNDA
@@ -43,3 +38,9 @@ Titik Suprihatin,5,3,1,2,YA
 Tutik Jaslikan,5,6,1,6,TIDAK
 Subaun,4,23,5,6,TIDAK
 Mekan,7,17,2,7,TUNDA
+Ksm Budaya 4,1,21,2,8,TIDAK
+Umk Warga Mandiri,4,1,2,8,YA
+Ksm Kreatif & Koi,7,10,5,4,TIDAK
+Sri Lasmini Budiono,1,30,1,6,TUNDA
+Umk Sayu Sejahtera,5,8,5,3,TIDAK
+Windu Collection,2,26,2,9,YA
