@@ -1,4 +1,4 @@
-const listData = () => {
+const predict = () => {
     let button = document.getElementById("databutton");
     let namaukm = document.getElementById("namaukm").value;
     let lamakerja = document.getElementById("lamakerja").value;
@@ -26,7 +26,7 @@ const listData = () => {
                 Swal.fire({
                     type: "success",
                     title: "Selamat",
-                    text: `Penerima Modal pada unit usaha atas nama ${namaukm} di terima}`
+                    text: `Penerima Modal pada unit usaha atas nama ${namaukm} di terima`
                 });
             }
         });
