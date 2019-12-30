@@ -23,10 +23,65 @@ const predict = () => {
                 });
             } else {
                 Swal.fire({
-                    type: "success",
-                    title: "Selamat",
-                    text: `Penerima Modal pada unit usaha atas nama ${namaukm} di terima`
-                });
+                        type: "success",
+                        title: "Selamat",
+                        text: `Penerima Modal pada unit usaha atas nama ${namaukm} di terima`,
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Lihat detail perhitungan'
+                    })
+                    .then((result) => {
+                        if (result.value) {
+                            fetch(`http://localhost:5000/api/prediksi/data/?namaukm=${namaukm}&lamakerja=${lamakerja}&jumlahpekerja=${jumlahpekerja}&omzet=${omzet}&jumlahaset=${jumlahaset}`)
+                                .then(response => {
+                                    return response.json();
+                                })
+                                .then(data => {
+                                    console.log(data.kriteria[0][0]);
+                                    Swal.fire({
+                                        title: "<i>Data ditemukan</i>",
+                                        animation: false,
+                                        customClass: {
+                                            popup: "animated fadeInDown faster"
+                                        },
+                                        html: `<div class="col s12 m4">
+                                            <div class="card">
+                                            <div class="card-content">
+                                                <p>
+                                                Keterangan : ${data.keterangan} <br>
+                                                Nama UKM : ${data.nama} <br>
+                                                Peluang Tidak : ${data.peluangtidak} <br>
+                                                Peluang Tunda : ${data.peluangtunda} <br>
+                                                Peluang Ya : ${data.peluangya} <br>
+                                                </p>
+                                                <table class="stripped highlight">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Nama UKM</th>
+                                                            <th>LAMA USAHA</th>
+                                                            <th>JUMLAH PEKERJA</th>
+                                                            <th>Omzet</th>
+                                                            <th>JUMLAH ASET</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>                                                 
+                                                    <tr>
+                                                        <td>${data.kriteria[0][0]}</td>
+                                                        <td>${data.kriteria[0][1]}</td>
+                                                        <td>${data.kriteria[0][2]}</td>
+                                                        <td>${data.kriteria[0][3]}</td>
+                                                        <td>${data.kriteria[0][4]}</td>
+                                                    <tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            </div>
+                                        </div>`
+                                    })
+                                })
+                        }
+                    })
             }
         });
 };
