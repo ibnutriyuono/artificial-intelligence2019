@@ -25,7 +25,7 @@ def hello():
     return "Hello, World!"
 
 @app.route('/api/prediksi/', methods=['GET', 'POST'])
-def add_message():
+def predict():
 
     def lamaKerja(data) :
         hasil=[]
