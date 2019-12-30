@@ -230,11 +230,7 @@ def predict():
         else :
             ket = "Ya"
         return nama, ket
-
-    # content = request.json
-    # prediksi = naiveBayes(request.args.get('namaukm'),request.args.get('lamakerja'),request.args.get('jumlahpekerja'),request.args.get('omzet'),request.args.get('jumlahaset'))
     prediksi = naiveBayes(request.args.get('namaukm'),int(request.args.get('lamakerja')),int(request.args.get('jumlahpekerja')),int(request.args.get('omzet')),int(request.args.get('jumlahaset')))
-    # print(content['test'])
     return jsonify({"Hasil":prediksi, "Arga":request.args})
 
 @app.route('/api/data/', methods=['GET', 'POST'])
@@ -444,23 +440,11 @@ def getPredictedData():
         td1 = pd.DataFrame(data=data[1:,1:],
                     index=data[1:,0],
                     columns=data[0,1:])
-        print()
-        # print(td1)
         
         P_TIDAK = P_LK_TIDAK*P_JP_TIDAK*P_OZ_TIDAK*P_JA_TIDAK*(jumlahTidak/jumlahData)
         P_TUNDA = P_LK_TUNDA*P_JP_TUNDA*P_OZ_TUNDA*P_JA_TUNDA*(jumlahTunda/jumlahData)
         P_YA = P_LK_YA*P_JP_YA*P_OZ_YA*P_JA_YA*(jumlahYa/jumlahData)
         
-        # print()
-        # print()
-        # print('Peluang Tidak = ',P_LK_TIDAK,'*',P_JP_TIDAK,'*',P_OZ_TIDAK,'*',P_JA_TIDAK,'*',jumlahTidak,'/',jumlahData, '=',P_TIDAK)
-        print('Peluang Tidak = ',P_TIDAK)
-        # print()
-        # print('Peluang TUNDA = ',P_LK_TUNDA,'*',P_JP_TUNDA,'*',P_OZ_TUNDA,'*',P_JA_TUNDA,'*',jumlahTunda,'/',jumlahData)
-        print('Peluang TUNDA = ',P_TUNDA)
-        # print()
-        # print('Peluang YA = ',P_LK_YA,'*',P_JP_YA,'*',P_OZ_YA,'*',P_JA_YA,'*',jumlahYa,'/',jumlahData)
-        print('Peluang YA = ',P_YA)
         maxP = max(P_TIDAK,P_TUNDA,P_YA)
         if maxP == P_TIDAK :
             ket = "Tidak"

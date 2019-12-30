@@ -117,12 +117,5 @@ const getdata = () => {
         for (var i = node.rows.length - 1; i > 0; i--) {
             node.deleteRow(i);
         }
-        console.log('kekw2')
     }
 }
-
-let namaukm = document.getElementById("namaukm").value;
-let lamakerja = document.getElementById("lamakerja").value;
-let jumlahpekerja = document.getElementById("jumlahpekerja").value;
-let omzet = document.getElementById("omzet").value;
-let jumlahaset = document.getElementById("jumlahaset").value;
