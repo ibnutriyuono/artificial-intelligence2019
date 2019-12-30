@@ -21,8 +21,24 @@
         <div class="row">
             <form id="form" action="javascript:linearSearch();">
                 <div class="input-field col m12">
-                    <input id="nomorpunggung" type="text" class="validate" required />
-                    <label for="nomorpunggung">Nomor Punggung</label>
+                    <input id="namaukm" type="text" class="validate" required />
+                    <label for="namaukm">Nama UKM</label>
+                </div>
+                <div class="input-field col m12">
+                    <input id="lamakerja" type="text" class="validate" required />
+                    <label for="lamakerja">Lama Kerja</label>
+                </div>
+                <div class="input-field col m12">
+                    <input id="jumlahpekerja" type="text" class="validate" required />
+                    <label for="jumlahpekerja">Jumlah Pekerja</label>
+                </div>
+                <div class="input-field col m12">
+                    <input id="omzet" type="text" class="validate" required />
+                    <label for="omzet">Omzet</label>
+                </div>
+                <div class="input-field col m12">
+                    <input id="jumlahaset" type="text" class="validate" required />
+                    <label for="jumlahaset">Jumlah Aset</label>
                 </div>
             </form>
         </div>
@@ -35,16 +51,6 @@
             <div id="data"></div>
         </div>
     </div>
-    <script>
-        fetch('http://localhost:5000/api/data/')
-            .then((response) => {
-                return response.json();
-            })
-            .then((myJson) => {
-                console.log(myJson);
-            });
-        console.log('kekw')
-    </script>
     <script src="naivebayes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
