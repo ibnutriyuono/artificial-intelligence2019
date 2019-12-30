@@ -32,5 +32,28 @@ const predict = () => {
 };
 
 const getdata = () => {
-    console.log('kekw')
+    if (document.getElementById("databutton").value == "Tampilkan Data") {
+        document.getElementById("databutton").value = "Sembunyikan Data"
+        fetch(`http://localhost:5000/api/data`)
+            .then((response) => {
+                return response.json();
+            })
+            .then(data => {
+                table = document.getElementById("table");
+                for (var i = 0; i < data.data.length; i++) {
+                    var newRow = table.insertRow(table.length);
+                    for (var j = 0; j < data.data[i].length; j++) {
+                        var cell = newRow.insertCell(j);
+                        cell.innerHTML = data.data[i][j];
+                    }
+                }
+            })
+    } else {
+        document.getElementById("databutton").value = "Tampilkan Data"
+        var node = document.getElementById("table");
+        for (var i = node.rows.length - 1; i > 0; i--) {
+            node.deleteRow(i);
+        }
+        console.log('kekw2')
+    }
 }
