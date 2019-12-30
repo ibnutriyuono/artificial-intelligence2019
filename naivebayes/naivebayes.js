@@ -39,7 +39,7 @@ const predict = () => {
                                 })
                                 .then(data => {
                                     Swal.fire({
-                                        title: "<i>Data ditemukan</i>",
+                                        title: "<i>Detail Data</i>",
                                         animation: false,
                                         customClass: {
                                             popup: "animated fadeInDown faster"
