@@ -7,7 +7,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-datalatih = pd.read_csv("./data/AI 2019-2020 Dataset Naive Bayes - Sheet1.csv")
+datalatih = pd.read_csv("../data/AI 2019-2020 Dataset Naive Bayes - Sheet1.csv")
 dataLatih = datalatih.sort_values("HASIL KEPUTUSAN")
     
 jumlahTidak = dataLatih.loc[dataLatih['HASIL KEPUTUSAN'] == "TIDAK"]
