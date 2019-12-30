@@ -237,5 +237,9 @@ def predict():
     print(prediksi)
     return jsonify({"Hasil":prediksi, "Arga":request.args})
 
+@app.route('/api/data/', methods=['GET', 'POST'])
+def getdata():
+    print(datalatih.values)
+    return jsonify({"Data":"EPIC"})
 if __name__ == '__main__':
     app.run(debug=True)
