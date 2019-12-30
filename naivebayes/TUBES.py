@@ -235,12 +235,15 @@ def predict():
     # prediksi = naiveBayes(request.args.get('namaukm'),request.args.get('lamakerja'),request.args.get('jumlahpekerja'),request.args.get('omzet'),request.args.get('jumlahaset'))
     prediksi = naiveBayes(request.args.get('namaukm'),int(request.args.get('lamakerja')),int(request.args.get('jumlahpekerja')),int(request.args.get('omzet')),int(request.args.get('jumlahaset')))
     # print(content['test'])
-    print(prediksi)
     return jsonify({"Hasil":prediksi, "Arga":request.args})
 
 @app.route('/api/data/', methods=['GET', 'POST'])
 def getdata():
-    print(datalatih.values.tolist())
     return jsonify({"data":datalatih.values.tolist()})
+
+@app.route('/api/prediksi/data', methods=['GET', 'POST'])
+def getPredictedData():
+    return jsonify({"data":"kekw"})
+
 if __name__ == '__main__':
     app.run(debug=True)
