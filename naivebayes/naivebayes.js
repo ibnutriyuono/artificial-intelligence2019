@@ -14,13 +14,13 @@ const predict = () => {
                 Swal.fire({
                     type: "error",
                     title: "Maaf",
-                    text: `Penerima Modal pada unit usaha atas nama ${namaukm} di ${dataukm['Hasil'][1]}`
+                    text: `Penerima Modal pada unit usaha atas nama ${namaukm} ${dataukm['Hasil'][1].toLowerCase()} di terima`
                 });
             } else if (dataukm['Hasil'][1] == "Tunda") {
                 Swal.fire({
                     type: "warning",
                     title: "Maaf",
-                    text: `Penerima Modal pada unit usaha atas nama ${namaukm} di ${dataukm['Hasil'][1]}`
+                    text: `Penerima Modal pada unit usaha atas nama ${namaukm} masih di ${dataukm['Hasil'][1]}`
                 });
             } else {
                 Swal.fire({
@@ -30,5 +30,4 @@ const predict = () => {
                 });
             }
         });
-    console.log('kekw')
 };
