@@ -1,5 +1,4 @@
 const predict = () => {
-    let button = document.getElementById("databutton");
     let namaukm = document.getElementById("namaukm").value;
     let lamakerja = document.getElementById("lamakerja").value;
     let jumlahpekerja = document.getElementById("jumlahpekerja").value;
@@ -31,3 +30,7 @@ const predict = () => {
             }
         });
 };
+
+const getdata = () => {
+    console.log('kekw')
+}
