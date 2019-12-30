@@ -20,7 +20,7 @@ const predict = () => {
                 Swal.fire({
                     type: "warning",
                     title: "Maaf",
-                    text: `Penerima Modal pada unit usaha atas nama ${namaukm} masih di ${dataukm['Hasil'][1]}`
+                    text: `Penerima Modal pada unit usaha atas nama ${namaukm} masih di ${dataukm['Hasil'][1].toLowerCase()}`
                 });
             } else {
                 Swal.fire({
