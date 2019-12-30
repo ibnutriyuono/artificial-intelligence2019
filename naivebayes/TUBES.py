@@ -241,6 +241,6 @@ def predict():
 @app.route('/api/data/', methods=['GET', 'POST'])
 def getdata():
     print(datalatih.values.tolist())
-    return jsonify({"Data":"EPIC", "real data": datalatih.values.tolist()})
+    return jsonify({"data":datalatih.values.tolist()})
 if __name__ == '__main__':
     app.run(debug=True)
