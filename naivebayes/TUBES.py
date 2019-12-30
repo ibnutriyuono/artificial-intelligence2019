@@ -241,7 +241,7 @@ def predict():
 def getdata():
     return jsonify({"data":datalatih.values.tolist()})
 
-@app.route('/api/prediksi/data', methods=['GET', 'POST'])
+@app.route('/api/prediksi/data/', methods=['GET', 'POST'])
 
 def getPredictedData():
     def lamaKerja(data) :
@@ -470,7 +470,7 @@ def getPredictedData():
             ket = "Ya"
         return kriteria,nama,ket,td1.values.tolist(),P_TIDAK,P_TUNDA,P_YA,maxP
     
-    data = naiveBayes("Bikid Graffer",2,12,1,3)
+    data = naiveBayes(request.args.get('namaukm'),int(request.args.get('lamakerja')),int(request.args.get('jumlahpekerja')),int(request.args.get('omzet')),int(request.args.get('jumlahaset')))
     return jsonify({"kriteria":data[0],'nama':data[1],'keterangan': data[2],'kontingensi':data[3],'peluangtidak':data[4],'peluangtunda':data[5],'peluangya':data[6],'peluangmax':data[7]})
 
 if __name__ == '__main__':
