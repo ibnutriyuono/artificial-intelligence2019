@@ -38,7 +38,6 @@ const predict = () => {
                                     return response.json();
                                 })
                                 .then(data => {
-                                    console.log(data.kriteria[0][0]);
                                     Swal.fire({
                                         title: "<i>Data ditemukan</i>",
                                         animation: false,
@@ -47,35 +46,36 @@ const predict = () => {
                                         },
                                         html: `<div class="col s12 m4">
                                             <div class="card">
-                                            <div class="card-content">
-                                                <p>
-                                                Keterangan : ${data.keterangan} <br>
-                                                Nama UKM : ${data.nama} <br>
-                                                Peluang Tidak : ${data.peluangtidak} <br>
-                                                Peluang Tunda : ${data.peluangtunda} <br>
-                                                Peluang Ya : ${data.peluangya} <br>
-                                                </p>
-                                                <table class="stripped highlight">
-                                                    <thead>
+                                                <div class="card-content">
+                                                    <p>
+                                                    Nama UKM : ${data.nama} <br>
+                                                    Peluang Tidak : ${data.peluangtidak} <br>
+                                                    Peluang Tunda : ${data.peluangtunda} <br>
+                                                    Peluang Ya : ${data.peluangya} <br>
+                                                    Peluang Terbesar : ${data.peluangmax} <br>
+                                                    Keterangan : ${data.keterangan}
+                                                    </p>
+                                                    <table class="stripped highlight">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Nama UKM</th>
+                                                                <th>LAMA USAHA</th>
+                                                                <th>JUMLAH PEKERJA</th>
+                                                                <th>Omzet</th>
+                                                                <th>JUMLAH ASET</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>                                                 
                                                         <tr>
-                                                            <th>Nama UKM</th>
-                                                            <th>LAMA USAHA</th>
-                                                            <th>JUMLAH PEKERJA</th>
-                                                            <th>Omzet</th>
-                                                            <th>JUMLAH ASET</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>                                                 
-                                                    <tr>
-                                                        <td>${data.kriteria[0][0]}</td>
-                                                        <td>${data.kriteria[0][1]}</td>
-                                                        <td>${data.kriteria[0][2]}</td>
-                                                        <td>${data.kriteria[0][3]}</td>
-                                                        <td>${data.kriteria[0][4]}</td>
-                                                    <tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                                            <td>${data.kriteria[0][0]}</td>
+                                                            <td>${data.kriteria[0][1]}</td>
+                                                            <td>${data.kriteria[0][2]}</td>
+                                                            <td>${data.kriteria[0][3]}</td>
+                                                            <td>${data.kriteria[0][4]}</td>
+                                                        <tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>`
                                     })
