@@ -11,10 +11,32 @@
 </head>
 
 <body>
+
+    <nav>
+        <div class="nav-wrapper teal">
+            <a href="/" class="brand-logo center">Naive Bayes pada kasus Penerima Modal</a>
+        </div>
+    </nav>
+    <div class="contaier">
+        <div class="row">
+            <form id="form" action="javascript:linearSearch();">
+                <div class="input-field col m12">
+                    <input id="nomorpunggung" type="text" class="validate" required />
+                    <label for="nomorpunggung">Nomor Punggung</label>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="center">
+                <form id="data" action="javascript:listData();">
+                    <input type="submit" id="databutton" class="btn" value="Tampilkan Data" />
+                </form>
+            </div>
+            <div id="data"></div>
+        </div>
+    </div>
     <script>
-        fetch(
-                'http://localhost:5000/api/prediksi/?namaukm=Kum%20Mandiri%20Sablon&lamakerja=2&jumlahpekerja=10&omzet=3&jumlahaset=10'
-                )
+        fetch('http://localhost:5000/api/data/')
             .then((response) => {
                 return response.json();
             })
@@ -23,6 +45,7 @@
             });
         console.log('kekw')
     </script>
+    <script src="naivebayes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
