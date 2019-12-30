@@ -20,23 +20,23 @@
     <div class="contaier">
         <div class="row">
             <form id="form" action="javascript:linearSearch();">
-                <div class="input-field col m12">
+                <div class="input-field col m4">
                     <input id="namaukm" type="text" class="validate" required />
                     <label for="namaukm">Nama UKM</label>
                 </div>
-                <div class="input-field col m12">
+                <div class="input-field col m4">
                     <input id="lamakerja" type="text" class="validate" required />
                     <label for="lamakerja">Lama Kerja</label>
                 </div>
-                <div class="input-field col m12">
+                <div class="input-field col m4">
                     <input id="jumlahpekerja" type="text" class="validate" required />
                     <label for="jumlahpekerja">Jumlah Pekerja</label>
                 </div>
-                <div class="input-field col m12">
+                <div class="input-field col m6">
                     <input id="omzet" type="text" class="validate" required />
                     <label for="omzet">Omzet</label>
                 </div>
-                <div class="input-field col m12">
+                <div class="input-field col m6">
                     <input id="jumlahaset" type="text" class="validate" required />
                     <label for="jumlahaset">Jumlah Aset</label>
                 </div>
@@ -44,7 +44,11 @@
         </div>
         <div class="row">
             <div class="center">
-                <form id="data" action="javascript:predict();">
+                <form id="predict" action="javascript:predict();">
+                    <input type="submit" id="predictbutton" class="btn" value="Tampilkan Prediksi" />
+                </form>
+                <br>
+                <form id="data" action="javascript:getdata();">
                     <input type="submit" id="databutton" class="btn" value="Tampilkan Data" />
                 </form>
             </div>
