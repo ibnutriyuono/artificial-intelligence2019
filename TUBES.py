@@ -2,9 +2,10 @@ import pandas as pd
 import numpy as np
 from flask import Flask, request, jsonify
 from flask import request
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 
 datalatih = pd.read_csv("./data/AI 2019-2020 Dataset Naive Bayes - Sheet1.csv")
 dataLatih = datalatih.sort_values("HASIL KEPUTUSAN")
@@ -239,7 +240,7 @@ def predict():
 
 @app.route('/api/data/', methods=['GET', 'POST'])
 def getdata():
-    print(datalatih.values)
-    return jsonify({"Data":"EPIC"})
+    print(datalatih.values.tolist())
+    return jsonify({"Data":"EPIC", "real data": datalatih.values.tolist()})
 if __name__ == '__main__':
     app.run(debug=True)
