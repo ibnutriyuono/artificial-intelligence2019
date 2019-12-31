@@ -1,3 +1,4 @@
+let history = []
 const predict = () => {
     let namaukm = document.getElementById("namaukm").value;
     let lamakerja = document.getElementById("lamakerja").value;
@@ -27,6 +28,14 @@ const predict = () => {
                                         return response.json();
                                     })
                                     .then(data => {
+                                        history.push({
+                                            'namaukm': data.nama,
+                                            'lamakerja': lamakerja,
+                                            'jumlahpekerja': jumlahpekerja,
+                                            'omzet': omzet,
+                                            'jumlahaset': jumlahaset,
+                                            'keterangan': data.keterangan,
+                                        })
                                         Swal.fire({
                                             title: "<i>Detail Data Perhitungan</i>",
                                             animation: false,
@@ -88,6 +97,14 @@ const predict = () => {
                                         return response.json();
                                     })
                                     .then(data => {
+                                        history.push({
+                                            'namaukm': data.nama,
+                                            'lamakerja': lamakerja,
+                                            'jumlahpekerja': jumlahpekerja,
+                                            'omzet': omzet,
+                                            'jumlahaset': jumlahaset,
+                                            'keterangan': data.keterangan,
+                                        })
                                         Swal.fire({
                                             title: "<i>Detail Data Perhitungan</i>",
                                             animation: false,
@@ -149,6 +166,14 @@ const predict = () => {
                                         return response.json();
                                     })
                                     .then(data => {
+                                        history.push({
+                                            'namaukm': data.nama,
+                                            'lamakerja': lamakerja,
+                                            'jumlahpekerja': jumlahpekerja,
+                                            'omzet': omzet,
+                                            'jumlahaset': jumlahaset,
+                                            'keterangan': data.keterangan,
+                                        })
                                         Swal.fire({
                                             title: "<i>Detail Data Perhitungan</i>",
                                             animation: false,
