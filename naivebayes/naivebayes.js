@@ -38,10 +38,10 @@ const predict = () => {
                                         <div class="card-content">
                                             <p>
                                             Nama UKM : ${data.nama} <br>
-                                            Peluang Tidak : ${data.peluangtidak} <br>
-                                            Peluang Tunda : ${data.peluangtunda} <br>
-                                            Peluang Ya : ${data.peluangya} <br>
-                                            Peluang Terbesar : ${data.peluangmax} <br>
+                                            Peluang Tidak : ${data.peluangtidak.toFixed(3)} <br>
+                                            Peluang Tunda : ${data.peluangtunda.toFixed(3)} <br>
+                                            Peluang Ya : ${data.peluangya.toFixed(3)} <br>
+                                            Peluang Terbesar : ${data.peluangmax.toFixed(3)} <br>
                                             Keterangan : ${data.keterangan}
                                             </p>
                                             <table class="stripped highlight">
@@ -99,10 +99,10 @@ const predict = () => {
                                             <div class="card-content">
                                                 <p>
                                                 Nama UKM : ${data.nama} <br>
-                                                Peluang Tidak : ${data.peluangtidak} <br>
-                                                Peluang Tunda : ${data.peluangtunda} <br>
-                                                Peluang Ya : ${data.peluangya} <br>
-                                                Peluang Terbesar : ${data.peluangmax} <br>
+                                                Peluang Tidak : ${data.peluangtidak.toFixed(3)} <br>
+                                                Peluang Tunda : ${data.peluangtunda.toFixed(3)} <br>
+                                                Peluang Ya : ${data.peluangya.toFixed(3)} <br>
+                                                Peluang Terbesar : ${data.peluangmax.toFixed(3)} <br>
                                                 Keterangan : ${data.keterangan}
                                                 </p>
                                                 <table class="stripped highlight">
@@ -160,10 +160,10 @@ const predict = () => {
                                                 <div class="card-content">
                                                     <p>
                                                     Nama UKM : ${data.nama} <br>
-                                                    Peluang Tidak : ${data.peluangtidak} <br>
-                                                    Peluang Tunda : ${data.peluangtunda} <br>
-                                                    Peluang Ya : ${data.peluangya} <br>
-                                                    Peluang Terbesar : ${data.peluangmax} <br>
+                                                    Peluang Tidak : ${data.peluangtidak.toFixed(3)} <br>
+                                                    Peluang Tunda : ${data.peluangtunda.toFixed(3)} <br>
+                                                    Peluang Ya : ${data.peluangya.toFixed(3)} <br>
+                                                    Peluang Terbesar : ${data.peluangmax.toFixed(3)} <br>
                                                     Keterangan : ${data.keterangan}
                                                     </p>
                                                     <table class="stripped highlight">
