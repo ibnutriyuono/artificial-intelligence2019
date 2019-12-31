@@ -254,3 +254,7 @@ const getdata = () => {
         }
     }
 }
+
+const getHistory = () => {
+    console.log(history)
+}
