@@ -287,5 +287,7 @@ const getHistory = () => {
         }
     } else {
         document.getElementById("historybutton").value = "Tampilkan History"
+        let node = document.getElementById("historydata");
+        node.innerHTML = ''
     }
 }
