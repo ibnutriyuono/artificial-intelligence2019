@@ -238,23 +238,54 @@ const getdata = () => {
             })
             .then(data => {
                 table = document.getElementById("table");
-                for (var i = 0; i < data.data.length; i++) {
-                    var newRow = table.insertRow(table.length);
-                    for (var j = 0; j < data.data[i].length; j++) {
-                        var cell = newRow.insertCell(j);
+                for (let i = 0; i < data.data.length; i++) {
+                    let newRow = table.insertRow(table.length);
+                    for (let j = 0; j < data.data[i].length; j++) {
+                        let cell = newRow.insertCell(j);
                         cell.innerHTML = data.data[i][j];
                     }
                 }
             })
     } else {
         document.getElementById("databutton").value = "Tampilkan Data"
-        var node = document.getElementById("table");
-        for (var i = node.rows.length - 1; i > 0; i--) {
+        let node = document.getElementById("table");
+        for (let i = node.rows.length - 1; i > 0; i--) {
             node.deleteRow(i);
         }
     }
 }
 
 const getHistory = () => {
-    console.log(history)
+    if (document.getElementById("historybutton").value == "Tampilkan History") {
+        document.getElementById("historybutton").value = "Sembunyikan History"
+        let col = [];
+        for (let i = 0; i < history.length; i++) {
+            for (let key in history[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
+        let table = document.createElement("table");
+        let tr = table.insertRow(-1);
+        for (let i = 0; i < col.length; i++) {
+            let th = document.createElement("th");
+            th.innerHTML = col[i];
+            tr.appendChild(th);
+        }
+        for (let i = 0; i < history.length; i++) {
+
+            tr = table.insertRow(-1);
+
+            for (let j = 0; j < col.length; j++) {
+                let tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = history[i][col[j]];
+            }
+            let divContainer = document.getElementById("historydata");
+            divContainer.innerHTML = "<h3>History</h3>";
+            divContainer.appendChild(table);
+        }
+    } else {
+        document.getElementById("historybutton").value = "Tampilkan History"
+    }
 }
