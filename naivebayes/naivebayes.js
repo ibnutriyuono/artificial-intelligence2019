@@ -283,6 +283,9 @@ const getHistory = () => {
             }
             let divContainer = document.getElementById("historydata");
             divContainer.innerHTML = "<h3>History</h3>";
+            divContainer.innerHTML += `<form id="getcsv" action="javascript:getCSV();">
+                                        <input type="submit" id="getcsvbutton" class="btn" value="Download CSV" />
+                                    </form>`;
             divContainer.appendChild(table);
         }
     } else {
@@ -290,4 +293,8 @@ const getHistory = () => {
         let node = document.getElementById("historydata");
         node.innerHTML = ''
     }
+}
+
+getCSV = () => {
+    console.log('getcsv kekw')
 }
