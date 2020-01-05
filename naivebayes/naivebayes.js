@@ -256,6 +256,10 @@ const getdata = () => {
 }
 
 const getHistory = () => {
+    let date = new Date();
+    let bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli",
+         "Agustus", "September", "Oktober", "November", "Desember"];
+    let namaBulan = bulan[date.getMonth()];     
     if (document.getElementById("historybutton").value == "Tampilkan History") {
         document.getElementById("historybutton").value = "Sembunyikan History"
         let col = [];
@@ -283,11 +287,8 @@ const getHistory = () => {
             }
             let divContainer = document.getElementById("historydata");
             divContainer.innerHTML = "<h3>History</h3>";
-            // divContainer.innerHTML += `<form id="getcsv">
-            //                             <input type="submit" id="getcsvbutton" class="btn" value="Download CSV" />
-            //                         </form>`;
             divContainer.innerHTML += `<a href='#' class="btn" 
-                                            onclick='downloadCSV({ filename: "data-training.csv" });'
+                                            onclick='downloadCSV({ filename: "data_training_${date.getDate()}_${namaBulan}_${date.getFullYear()}_${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}.csv" });'
                                         >Download CSV</a>`;
             divContainer.appendChild(table);
         }
